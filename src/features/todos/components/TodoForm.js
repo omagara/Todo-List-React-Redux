@@ -10,11 +10,9 @@ function TodoForm() {
 
     function handleImputTextChange(event){
         setText(event.target.value);
-        console.log(event.target.value);
     }
 
     function handleInputTextAdd(){
-        console.log("input text to be added: ", inputText);
         dispatch(AddTodo(inputText));
         setText("");
     }
