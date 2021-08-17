@@ -7,8 +7,8 @@ function TodoList() {
     return (
         <div className="todo-container">
             <h1>Todo List</h1>
-            <TodoGroup />
             <TodoForm />
+            <TodoGroup />
         </div>
     )
 }
