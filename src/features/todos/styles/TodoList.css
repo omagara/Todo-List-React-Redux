@@ -1,0 +1,26 @@
+h1{
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+body {
+    background: linear-gradient(
+      90deg,
+      rgba(61, 90, 128, 1) 0%,
+      rgba(152, 193, 217, 1) 100%
+    );
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 600px;
+    min-height: 600px;
+    background: #161a2b;
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+  }

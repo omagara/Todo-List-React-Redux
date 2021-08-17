@@ -20,11 +20,13 @@ function TodoItem(props) {
     
     
     return (
-        <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
-            {todo.text}
-            <span 
-                    className ="todoRemove" 
-                    onClick = {handleRemove}>x</span>
+        <div className="items">
+            <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
+                    <span className="todoText">{todo.text}</span>
+                <span 
+                        className ="todoRemove" 
+                        onClick = {handleRemove}>x</span>
+            </div>
         </div>
     )
 }

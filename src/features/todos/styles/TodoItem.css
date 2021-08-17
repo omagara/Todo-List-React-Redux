@@ -1,4 +1,41 @@
 .TodoItem-todo.done{
-    color: darkslategrey;
+    color: black;
     text-decoration: line-through;
+}
+
+.items{
+    /* display: flex;
+    justify-content: space-between; */
+    display: flex;
+    align-items: center;
+    margin: 4px auto;
+    color: #fff;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 118, 20, 1) 0%,
+      rgba(255, 84, 17, 1) 100%
+    );
+  
+    padding: 16px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.todoText{
+    /* display: inline-flex;
+    justify-content: flex-start; */
+    /* margin-right: 90px; */
+    padding: 10px;
+}
+.todoRemove{
+    /* display: inline-flex;
+    justify-content: flex-end; */
+    margin-left: auto;
+    background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  cursor: pointer;
+  padding: 16px 22px;
 }
