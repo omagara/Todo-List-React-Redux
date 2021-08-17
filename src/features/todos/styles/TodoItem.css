@@ -4,8 +4,6 @@
 }
 
 .items{
-    /* display: flex;
-    justify-content: space-between; */
     display: flex;
     align-items: center;
     margin: 4px auto;
@@ -22,14 +20,17 @@
 }
 
 .todoText{
-    /* display: inline-flex;
-    justify-content: flex-start; */
-    /* margin-right: 90px; */
     padding: 10px;
 }
+
+.todoRemove:hover{
+    margin-left: auto;
+    background: black;
+    cursor: pointer;
+    padding: 16px 22px;
+}
+
 .todoRemove{
-    /* display: inline-flex;
-    justify-content: flex-end; */
     margin-left: auto;
     background: linear-gradient(
     90deg,
@@ -39,3 +40,4 @@
   cursor: pointer;
   padding: 16px 22px;
 }
+

@@ -17,6 +17,11 @@ button{
     text-transform: capitalize;
 }
 
+button:hover{
+    background: white;
+    color: rgb(255, 84, 17);
+    
+}
 input{
         padding: 14px 32px 14px 16px;
         border-radius: 4px 0 0 4px;
