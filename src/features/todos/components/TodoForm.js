@@ -1,8 +1,9 @@
 import React, { useState }from 'react'
 import { useDispatch } from 'react-redux';
+import { createTodo } from '../../apis/todos';
 import { AddTodo } from '../reducers/todosSlice';
 import '../styles/TodoForm.css'
-
+import 'antd/dist/antd.css';
 
 function TodoForm() {
     const [inputText, setText] = useState("");
@@ -17,10 +18,13 @@ function TodoForm() {
             alert("Empty String. Please add a todo item.");
         }
         else{
-            dispatch(AddTodo(inputText));
-            setText("");
-        }
-    }
+            createTodo(inputText).then((response) => {
+            dispatch(AddTodo(response.data));
+            });
+            setText("");        
+        };
+
+    };
     
     return (
         <div className = "TodoForm">
