@@ -17,6 +17,8 @@ function TodoItem(props) {
         dispatch(RemoveTodo(props.itemId));
     }
 
+    
+    
     return (
         <div className="items">
             <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
