@@ -13,15 +13,19 @@ function TodoForm() {
     }
 
     function handleInputTextAdd(){
-        dispatch(AddTodo(inputText));
+        if (inputText ===""){
+            alert("Empty String. Please add a todo item.");
+        }
+        else{dispatch(AddTodo(inputText));
         setText("");
+        }
     }
     
     return (
         <div className = "TodoForm">
             <input
                 type = "text"
-                placeholder = "input a new todo item"
+                placeholder = "Add a new todo item..."
                 value = {inputText}
                 onChange = {handleImputTextChange}
             ></input>
