@@ -13,11 +13,12 @@ function TodoForm() {
     }
 
     function handleInputTextAdd(){
-        if (inputText ===""){
+        if (inputText === ""){
             alert("Empty String. Please add a todo item.");
         }
-        else{dispatch(AddTodo(inputText));
-        setText("");
+        else{
+            dispatch(AddTodo(inputText));
+            setText("");
         }
     }
     

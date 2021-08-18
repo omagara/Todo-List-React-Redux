@@ -17,15 +17,11 @@ function TodoItem(props) {
         dispatch(RemoveTodo(props.itemId));
     }
 
-    
-    
     return (
         <div className="items">
             <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
                     <span className="todoText">{todo.text}</span>
-                <span 
-                        className ="todoRemove" 
-                        onClick = {handleRemove}>x</span>
+                    <span className ="todoRemove" onClick = {handleRemove}>x</span>
             </div>
         </div>
     )
