@@ -19,11 +19,12 @@ const todosSlice = createSlice({
     initialState,
     reducers: {
         AddTodo (state, action){
-            todosAdapter.addOne(state,{
-                id: uuid(),
-                text:action.payload,
-                done: false,
-            });
+            // todosAdapter.addOne(state,{
+            //     id: uuid(),
+            //     text:action.payload,
+            //     done: false,
+            // });
+            todosAdapter.addOne(state, action.payload);
         },
         
         ToggleTodo(state, action){
@@ -33,11 +34,15 @@ const todosSlice = createSlice({
 
         RemoveTodo(state, action){
             todosAdapter.removeOne(state,action.payload); 
+        },
+
+        AddTodos(state,action){
+            todosAdapter.addMany(state,action.payload);
         }
     },
 });
 
 export default todosSlice.reducer;
 export const { selectAll: selectTodos, selectIds: selectTodoIds, selectById: selectTodoById} = todosAdapter.getSelectors((state) => state.todoList);
-export const { AddTodo, ToggleTodo, RemoveTodo } = todosSlice.actions;
+export const { AddTodos, AddTodo, ToggleTodo, RemoveTodo } = todosSlice.actions;
 export const selectDoneItems = createSelector([selectTodos], (todos) => todos.filter((todo) => todo.done));
