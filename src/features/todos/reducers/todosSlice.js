@@ -1,5 +1,4 @@
 import { createSlice, createEntityAdapter, createSelector } from "@reduxjs/toolkit";
-import {v4 as uuid} from "uuid";
 
 const todosAdapter = createEntityAdapter();
 const initialState =  todosAdapter.getInitialState();
@@ -9,11 +8,6 @@ const todosSlice = createSlice({
     initialState,
     reducers: {
         AddTodo (state, action){
-            // todosAdapter.addOne(state,{
-            //     id: uuid(),
-            //     text:action.payload,
-            //     done: false,
-            // });
             todosAdapter.addOne(state, action.payload);
         },
         

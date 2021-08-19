@@ -3,7 +3,6 @@ import { selectTodoById, ToggleTodo, RemoveTodo } from '../reducers/todosSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/TodoItem.css'
 import { deleteTodo, updateTodo } from '../../apis/todos';
-import { Alert, Button, Space } from 'antd';
 import {DeleteOutlined} from '@ant-design/icons'
 
 function TodoItem(props) {
