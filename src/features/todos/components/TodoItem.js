@@ -3,7 +3,8 @@ import { selectTodoById, ToggleTodo, RemoveTodo } from '../reducers/todosSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/TodoItem.css'
 import { deleteTodo, updateTodo } from '../../apis/todos';
-import {DeleteOutlined} from '@ant-design/icons'
+import {DeleteOutlined, EditOutlined} from '@ant-design/icons'
+import { Modal, Button } from 'antd';
 
 function TodoItem(props) {
     const todo = useSelector(state => selectTodoById(state, props.itemId))
@@ -17,17 +18,18 @@ function TodoItem(props) {
     };
 
     function handleRemove(event){
-        event.stopPropagation();
         deleteTodo(props.itemId).then((response) => {
             dispatch(RemoveTodo(response.data));
         });
+        event.stopPropagation();
     }
 
     return (
         <div className="items">
             <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
                     <span className="todoText">{todo.text}</span>
-                    <span className ="todoRemove" onClick = {handleRemove}><DeleteOutlined /></span>
+                    <span className ="todoRemove" onClick={handleRemove}><DeleteOutlined /></span>
+                  
             </div>
         </div>
     )

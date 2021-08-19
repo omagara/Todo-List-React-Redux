@@ -3,7 +3,20 @@ import TodoList from './features/todos/components/TodoList';
 import {Route, Link, BrowserRouter, Switch} from 'react-router-dom';
 import NotFoundPage from './features/notfound/NotFoundPage';
 import DoneList from './features/todos/components/DoneList';
+import { useDispatch } from 'react-redux';
+import { getTodos } from '../src/features/apis/todos';
+import { AddTodos } from '../src/features/todos/reducers/todosSlice';
+import { useEffect } from 'react';
 function App() {
+  const dispatch = useDispatch();
+    
+  useEffect(() => {
+      getTodos().then((response) => {
+          console.log("response: ", response.data);
+          dispatch(AddTodos(response.data));
+      })
+  }, [dispatch]) 
+
   return (
     <div className="App">
       <BrowserRouter>
