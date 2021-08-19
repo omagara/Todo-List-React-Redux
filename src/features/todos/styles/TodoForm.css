@@ -28,11 +28,10 @@ input{
         border-radius: 4px 0 0 4px;
         border: 2px solid #ff6d0c;
         outline: none;
-        width: 320px;
-        background: transparent;
-        color: #ffffff;
+        width: 420px;
+        color: #ececec;
 }
 
 input::placeholder {
-    color: #ffffff;
+    color: #ff6d0c;
   }

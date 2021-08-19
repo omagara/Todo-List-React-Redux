@@ -4,6 +4,7 @@ import { createTodo } from '../../apis/todos';
 import { AddTodo } from '../reducers/todosSlice';
 import '../styles/TodoForm.css'
 import 'antd/dist/antd.css';
+import { message } from 'antd';
 
 function TodoForm() {
     const [inputText, setText] = useState("");
@@ -15,13 +16,14 @@ function TodoForm() {
 
     function handleInputTextAdd(){
         if (inputText === ""){
-            alert("Empty String. Please add a todo item.");
+            message.error("You can't leave this field blank!");
         }
         else{
             createTodo(inputText).then((response) => {
             dispatch(AddTodo(response.data));
             });
-            setText("");        
+            setText("");
+            message.success("Added a new todo item!")        
         };
 
     };

@@ -1,42 +1,48 @@
 .TodoItem-todo.done{
     color: black;
     text-decoration: line-through;
+    
 }
 
 .items{
-    display: flex;
-    align-items: center;
-    margin: 4px auto;
-    color: #fff;
+    margin: 6px auto;
+    color: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
       rgba(255, 118, 20, 1) 0%,
       rgba(255, 84, 17, 1) 100%
     );
   
-    padding: 16px;
+    padding: 20px;
     border-radius: 5px;
-    width: 65%;
+    width: 80%;
 }
 
+
 .todoText{
-    padding: 10px;
+    float: left;
+    margin-top: -11px;
+    text-align: left;
 }
 
 .todoRemove:hover{
-    margin-left: auto;
-    background: black;
+    float: right;
+    margin-right: -20px;
+    margin-top: -20px;
+    background: rgb(48, 48, 48);
     cursor: pointer;
-    padding: 16px 22px;
+    padding: 9px 15px;
 }
 
 .todoRemove{
-    margin-left: auto;
+    float: right;
+    margin-right: -20px;
+    margin-top: -20px;
     background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
     rgba(17, 122, 255, 1) 100%
   );
   cursor: pointer;
-  padding: 16px 22px;
+  padding: 9px 15px;
 }
