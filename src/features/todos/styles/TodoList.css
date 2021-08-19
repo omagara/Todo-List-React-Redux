@@ -14,7 +14,7 @@ body {
 .todo-container {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    flex: start;
     width: 600px;
     min-height: 600px;
     background: rgba(0, 0, 0, 0.822);

@@ -16,7 +16,7 @@ function TodoList() {
             console.log("response: ", response.data);
             dispatch(AddTodos(response.data));
         })
-    }, []) 
+    }, [dispatch]) 
     return (
         <div className="todo-container">
             <h1>Todo List</h1>
