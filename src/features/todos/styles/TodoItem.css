@@ -13,7 +13,7 @@
       rgba(255, 84, 17, 1) 100%
     );
   
-    padding: 20px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 5px;
     width: 80%;
@@ -21,29 +21,29 @@
 
 
 .todoText{
-    float: left;
+    /* float: left; */
     margin-top: -11px;
     text-align: left;
 }
 
 .todoRemove:hover{
     float: right;
-    margin-right: -20px;
-    margin-top: -20px;
+    margin-right: -10px;
+    margin-top: -10px;
     background: rgb(48, 48, 48);
     cursor: pointer;
-    padding: 9px 15px;
+    padding: 10px 15px;
 }
 
 .todoRemove{
     float: right;
-    margin-right: -20px;
-    margin-top: -20px;
+    margin-right: -10px;
+    margin-top: -10px;
     background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
     rgba(17, 122, 255, 1) 100%
   );
   cursor: pointer;
-  padding: 9px 15px;
+  padding: 10px 15px;
 }

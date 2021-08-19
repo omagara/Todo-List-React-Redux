@@ -31,3 +31,7 @@ body {
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
   }
+  h1{
+    font-size: 35px;
+    font-weight: bold;
+  }
