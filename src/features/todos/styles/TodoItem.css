@@ -6,16 +6,17 @@
 
 .items{
     margin: 6px auto;
+    text-align: left;
     color: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
       rgba(255, 118, 20, 1) 0%,
       rgba(255, 84, 17, 1) 100%
     );
-  
+    margin-left: 20px;
     padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
     width: 80%;
 }
 
@@ -28,8 +29,8 @@
 
 .todoRemove:hover{
     float: right;
-    margin-right: -10px;
-    margin-top: -10px;
+    margin-right: -54px;
+    margin-top: -32px;
     background: rgb(48, 48, 48);
     cursor: pointer;
     padding: 10px 15px;
@@ -37,12 +38,35 @@
 
 .todoRemove{
     float: right;
-    margin-right: -10px;
-    margin-top: -10px;
+    margin-right: -54px;
+    margin-top: -32px;
     background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
     rgba(17, 122, 255, 1) 100%
+  );
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.todoEdit:hover{
+    float: right;
+    margin-right: -98px;
+    margin-top: -32px;
+    background: rgb(46, 46, 46);
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.todoEdit{
+    float: right;
+    margin-right: -98px;
+    margin-top: -32px;
+    background: linear-gradient(
+    90deg,
+    rgb(151, 196, 255) 100%,
+    rgb(60, 174, 255) 0%
+    
   );
   cursor: pointer;
   padding: 10px 15px;
