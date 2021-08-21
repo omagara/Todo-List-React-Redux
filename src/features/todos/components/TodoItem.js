@@ -21,8 +21,7 @@ function TodoItem(props) {
         deleteTodo(props.itemId).then((response) => {
             dispatch(RemoveTodo({id: props.itemId, deleteTodo:response.data}));
         });
-        message.success("Todo item deleted successfully")
-            
+        message.success("Todo item deleted successfully")      
     }
  
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -35,19 +34,17 @@ function TodoItem(props) {
     }
 
         const showModal = () => {
-
             setIsModalVisible(true);
           };
 
         const handleOk = () => {
             if(textInput === ""){
-                    message.warn("No changes were made!");
+                message.warn("No changes were made!");
             }
             else{
                 updateTodo(props.itemId, {text: textInput}).then((response) => {
                     dispatch(ToggleTodo({id: props.itemId, updateTodo:response.data}));
                 });
-                
                 message.success("Todo item updated successfully!")
             }
             setTextInput("");
@@ -57,9 +54,6 @@ function TodoItem(props) {
         const handleCancel = () => {
             setIsModalVisible(false);
           };
-        
-        
-
 
     return (
         <div className="items">

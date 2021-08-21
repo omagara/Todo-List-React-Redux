@@ -1,19 +1,19 @@
-
 h1{
     padding-top: 30px;
 }
+
 .text{
     width: 240px;
     float: right;
-
 }
+
 .card{
     margin-bottom: 10px;
     width: 300px;
     font-size: 18px;
     color: black;
-
 }
+
 .card:nth-child(even) {
     background: linear-gradient(
       90deg,
@@ -38,7 +38,6 @@ h1{
     justify-content: space-around;
 }
 
-
 .container {
     width: 1000px;
     min-height: 600px;
@@ -53,6 +52,5 @@ h1{
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
-  }
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}

@@ -1,7 +1,6 @@
 .TodoItem-todo.done{
     color: black;
     text-decoration: line-through;
-    
 }
 
 .items{
@@ -22,7 +21,6 @@
 
 
 .todoText{
-    /* float: left; */
     margin-top: -11px;
     text-align: left;
 }
