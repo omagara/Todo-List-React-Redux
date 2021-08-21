@@ -1,19 +1,25 @@
 import React from 'react'
-import TodoItem from './TodoItem';
 import {selectDoneItems} from '../reducers/todosSlice';
 import {useSelector} from 'react-redux';
-
+import { Card } from 'antd';
+import {FileDoneOutlined} from '@ant-design/icons'
+import '../styles/DoneList.css'
 
 function DoneList() {
 
     const doneItems = useSelector(selectDoneItems);
     return (
-        <div>
-            {
+        <div className="container">
+            <h1>Done Items</h1>
+            <div className="cards">
+            { 
               doneItems.map((item) => (
-                <TodoItem key={item.id} itemId={item.id} />
+                <Card className="card"  title={<FileDoneOutlined/>}>
+                <span className="text">{item.text}</span>
+                </Card>
             ))
             }
+            </div>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../styles/TodoItem.css'
 import { deleteTodo, updateTodo } from '../../apis/todos';
 import {DeleteOutlined, EditOutlined} from '@ant-design/icons'
-import { Modal, Button, Input } from 'antd';
+import { Modal, Input, message } from 'antd';
 
 function TodoItem(props) {
     const todo = useSelector(state => selectTodoById(state, props.itemId))
@@ -17,39 +17,44 @@ function TodoItem(props) {
         });  
     };
 
-    function handleRemove(event){
+    function handleRemove(){
         deleteTodo(props.itemId).then((response) => {
-            dispatch(RemoveTodo(response.data));
+            dispatch(RemoveTodo({id: props.itemId, deleteTodo:response.data}));
         });
-        event.stopPropagation();
+        message.success("Todo item deleted successfully")
+            
     }
-
  
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [textInput, setTextInput] = useState(todo.text);
+    const [textInput, setTextInput] = useState("");
     const { TextArea } = Input;    
-          
-            const showModal = () => {
-                if (todoStatus === todo.done){
-                    EditOutlined.visible(false);
-                    setIsModalVisible(false);
-                }
-                else {
-                setIsModalVisible(true);
-                }
-            
+     
+    
+    function handleEdit(event){
+        setTextInput(event.target.value);
+    }
+
+        const showModal = () => {
+
+            setIsModalVisible(true);
           };
-          const handleOk = () => {
-              if (Input === todo.text || Input === ""){
-                setIsModalVisible(false);
-              }
-              else{
-                  setTextInput(Input);
-              }
-            
+
+        const handleOk = () => {
+            if(textInput === ""){
+                    message.warn("No changes were made!");
+            }
+            else{
+                updateTodo(props.itemId, {text: textInput}).then((response) => {
+                    dispatch(ToggleTodo({id: props.itemId, updateTodo:response.data}));
+                });
+                
+                message.success("Todo item updated successfully!")
+            }
+            setTextInput("");
+            setIsModalVisible(false);
           };
         
-          const handleCancel = () => {
+        const handleCancel = () => {
             setIsModalVisible(false);
           };
         
@@ -59,15 +64,14 @@ function TodoItem(props) {
     return (
         <div className="items">
             <div className = {`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
-                    <span className="todoText">{todo.text}</span>
-                    </div>
-                    <span className ="todoRemove" onClick={handleRemove}><DeleteOutlined /></span>
-                    <span className ="todoEdit" onClick={showModal}><EditOutlined /> </span>
-                       
-              <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <TextArea rows={4} defaultValue={todo.text}></TextArea>  
-              </Modal>
-            
+                <span className="todoText">{todo.text}</span>        
+            </div>        
+            <span className ="todoRemove" onClick={handleRemove}><DeleteOutlined /></span>
+            {!todo.done &&
+                <span className ="todoEdit" onClick={showModal}><EditOutlined /> </span>}    
+            <Modal title="Modify Todo Item" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <TextArea rows={4} defaultValue={todo.text} onChange={handleEdit}></TextArea>  
+            </Modal>
         </div>
     )
 }

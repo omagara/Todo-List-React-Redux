@@ -1,0 +1,58 @@
+
+h1{
+    padding-top: 30px;
+}
+.text{
+    width: 240px;
+    float: right;
+
+}
+.card{
+    margin-bottom: 10px;
+    width: 300px;
+    font-size: 18px;
+    color: black;
+
+}
+.card:nth-child(even) {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 118, 20, 1) 0%,
+      rgba(255, 84, 17, 1) 100%
+    );
+    border: none
+}
+
+.card:nth-child(odd) {
+    background: linear-gradient(
+      90deg,
+      rgb(218, 218, 218) 0%,
+      rgb(189, 189, 189) 100%
+    );
+    border: none
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: space-around;
+}
+
+
+.container {
+    width: 1000px;
+    min-height: 600px;
+    background: rgba(0, 0, 0, 0.822);
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+  }
