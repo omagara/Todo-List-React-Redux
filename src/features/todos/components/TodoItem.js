@@ -63,7 +63,7 @@ function TodoItem(props) {
             <span className ="todoRemove" onClick={handleRemove}><DeleteOutlined /></span>
             {!todo.done &&
                 <span className ="todoEdit" onClick={showModal}><EditOutlined /> </span>}    
-            <Modal title="Modify Todo Item" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="Modify Todo Item" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} destroyOnClose={true}>
                 <TextArea rows={4} defaultValue={todo.text} onChange={handleEdit}></TextArea>  
             </Modal>
         </div>
