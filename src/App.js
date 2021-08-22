@@ -12,7 +12,6 @@ function App() {
     
   useEffect(() => {
       getTodos().then((response) => {
-          console.log("response: ", response.data);
           dispatch(AddTodos(response.data));
       })
   }, [dispatch]) 
